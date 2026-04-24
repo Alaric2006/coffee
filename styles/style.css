@@ -1,0 +1,1497 @@
+* { 
+   padding: 0; 
+   margin: 0; 
+   box-sizing: border-box;
+ }
+ 
+ .fixed { 
+   position: fixed; 
+   top: 50%; 
+   left: 50%; 
+   transform: translateX(-50%); 
+   text-align: center; 
+   color: #fffce1; 
+   z-index: 999 
+ }
+ 
+ html { 
+ background: linear-gradient(180deg, #0e100f 0%, #121413 25%, #141614 50%, #121413 75%, #0e100f 100%);
+ cursor: pointer; 
+ font-family: 'Arial', sans-serif;
+ overflow-y: auto;
+ scrollbar-width: none; /* Firefox */
+ -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* 隐藏滚动条但保留滚动功能 */
+html::-webkit-scrollbar {
+    width: 0;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+body {
+    overflow-x: hidden;
+    color: #fffce1;
+    background: linear-gradient(180deg, #0e100f 0%, #121413 25%, #141614 50%, #121413 75%, #0e100f 100%);
+    background-attachment: fixed;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 135, 9, 0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+}
+ 
+ /* 导航栏样式 */
+ .navbar {
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     background: rgba(14, 16, 15, 0.9);
+     padding: 1rem 5rem 1rem 0;
+     z-index: 2000;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     backdrop-filter: blur(10px);
+ }
+
+ .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fffce1;
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+ .nav-links {
+     display: flex;
+     list-style: none;
+     gap: 2rem;
+ }
+
+ .nav-links a {
+     color: #fffce1;
+     text-decoration: none;
+     transition: color 0.3s ease;
+ }
+
+ .nav-links a:hover {
+     color: #ff8709;
+ }
+
+ .lang-toggle {
+     background: transparent;
+     border: 1px solid rgba(255, 252, 225, 0.3);
+     color: rgba(255, 252, 225, 0.6);
+     font-family: 'Helvetica Neue', 'Arial', sans-serif;
+     font-size: 0.65rem;
+     font-weight: 300;
+     letter-spacing: 3px;
+     padding: 0.5rem 1rem;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     margin-left: 2rem;
+ }
+
+ .lang-toggle:hover {
+     border-color: #ff8709;
+     color: #ff8709;
+ }
+
+ /* 双语内容控制 */
+ .lang-toggle {
+     background: transparent;
+     border: 1px solid rgba(255, 252, 225, 0.3);
+     color: rgba(255, 252, 225, 0.6);
+     font-family: 'Helvetica Neue', 'Arial', sans-serif;
+     font-size: 0.65rem;
+     font-weight: 300;
+     letter-spacing: 3px;
+     padding: 0.5rem 1rem;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     margin-left: 2rem;
+ }
+
+ .lang-toggle:hover {
+     border-color: #ff8709;
+     color: #ff8709;
+ }
+
+ /* 产品标题和描述样式 */
+ .product-title {
+     font-size: 3rem;
+     margin-bottom: 1rem;
+     color: #f5f5f5;
+     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+     letter-spacing: 5px;
+     font-weight: 300;
+ }
+
+ .product-description {
+     color: rgba(255, 255, 255, 0.5);
+     font-size: 0.85rem;
+     line-height: 2.2;
+     max-width: 100%;
+     font-family: 'Helvetica Neue', 'Arial', sans-serif;
+ }
+ 
+ /* 英雄区域 */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+ .wrapper { 
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 1;
+ }
+ 
+ .transition { 
+   position: absolute; 
+   left: 0; 
+   top: 0; 
+   bottom: 0; 
+   right: 0; 
+   width: 100%; 
+   height: 100%; 
+ }
+ 
+ .container {
+     position: relative;
+     z-index: 1000;
+     text-align: center;
+ }
+ 
+ h1 {
+     font-size: 5rem;
+     color: #fffce1;
+     text-align: center;
+     margin-bottom: 1rem;
+ }
+ 
+ .tagline {
+     font-size: 1rem;
+     color: rgba(255, 252, 225, 0.8);
+     text-align: center;
+     letter-spacing: 8px;
+     font-family: 'Helvetica Neue', 'Arial', sans-serif;
+     font-weight: 300;
+     margin-top: 0;
+     text-transform: uppercase;
+ }
+ 
+ @keyframes breathe {
+     0% { opacity: 0.3; }
+     50% { opacity: 0.8; }
+     100% { opacity: 0.3; }
+ }
+ 
+ .hint {
+     color: rgba(255, 252, 225, 0.5);
+     text-align: center;
+     font-size: 1.5rem;
+     margin-top: 20px;
+     opacity: 0;
+     transition: opacity 0.5s ease;
+ }
+ 
+ .hint.show {
+     animation: breathe 2s ease-in-out infinite;
+ }
+ 
+ /* 主要内容区域 */
+ .main-content {
+    position: relative;
+    z-index: 10;
+    padding: 4rem 2rem;
+    background: transparent;
+}
+ 
+ .section {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    background: transparent;
+}
+ 
+ h2 {
+     font-size: 3rem;
+     margin-bottom: 6rem;
+     text-align: left;
+     color: #fffce1;
+     padding-left: 2rem;
+ }
+ 
+ /* 画廊样式 */
+.gallery-container {
+    margin-top: 15vh;
+}
+
+.product-item {
+    position: relative;
+    min-height: 80vh;
+    margin-bottom: 35vh;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+/* 奇数项：图片靠左，文字在图片右下角 */
+.product-item:nth-child(odd) {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.product-item:nth-child(odd) .product-image {
+    margin-right: -8%;
+}
+
+.product-item:nth-child(odd) .product-info {
+    position: absolute;
+    right: 2%;
+    bottom: -60px;
+    margin-left: 8%;
+    max-width: 420px;
+}
+
+/* 偶数项：图片靠右，文字在图片左下角 */
+.product-item:nth-child(even) {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.product-item:nth-child(even) .product-image {
+    margin-left: -8%;
+}
+
+.product-item:nth-child(even) .product-info {
+    position: absolute;
+    left: 2%;
+    bottom: -60px;
+    margin-right: 8%;
+    max-width: 420px;
+}
+
+.product-image {
+    width: 60%;
+    height: 80vh;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border-radius: 4px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+.product-item:hover .product-image {
+    transform: scale(1.02);
+}
+
+.product-info {
+    position: relative;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(14, 16, 15, 0.7) 0%, rgba(14, 16, 15, 0.3) 100%);
+    backdrop-filter: blur(15px);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    border-radius: 8px;
+    z-index: 10;
+    transition: backdrop-filter 0.5s ease;
+    text-align: left;
+}
+
+.product-item:nth-child(even) .product-info {
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+.product-item:hover .product-info {
+    backdrop-filter: blur(25px);
+}
+
+.product-item {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.2, 1, 0.3, 1), transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.product-item.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.product-item .product-info {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s cubic-bezier(0.2, 1, 0.3, 1) 0.3s, transform 0.8s cubic-bezier(0.2, 1, 0.3, 1) 0.3s, backdrop-filter 0.5s ease;
+}
+
+.product-item:nth-child(even) .product-info {
+    transform: translateX(50px);
+}
+
+.product-item.fade-in .product-info {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.product-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #f5f5f5;
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    letter-spacing: 5px;
+    font-weight: 300;
+}
+
+.product-description {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    line-height: 2.2;
+    max-width: 100%;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+.product-number {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(255, 135, 9, 0.8);
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+.product-divider {
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: linear-gradient(90deg, #ff8709, rgba(255, 135, 9, 0.3));
+    margin: 1rem 0;
+}
+ 
+ /* 关于区域样式 - 高级感左右分割布局 */
+ .about-section {
+     min-height: 100vh;
+     padding: 10vh 4rem 10vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+ }
+ 
+ .about-container {
+     max-width: 1400px;
+     width: 100%;
+     display: grid;
+     grid-template-columns: 1fr 1.2fr;
+     gap: 6rem;
+     align-items: center;
+     background: rgba(255, 255, 255, 0.03);
+     backdrop-filter: blur(25px);
+     -webkit-backdrop-filter: blur(25px);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     border-radius: 12px;
+     padding: 4rem;
+ }
+ 
+ .about-image-column {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .about-image-wrapper {
+     position: relative;
+     width: 100%;
+     max-width: 400px;
+     aspect-ratio: 1;
+ }
+ 
+ .about-image {
+     width: 100%;
+     height: 100%;
+     border-radius: 50%;
+     object-fit: cover;
+     border: 2px solid rgba(255, 135, 9, 0.2);
+ }
+ 
+ .about-text-column {
+     padding-left: 2rem;
+ }
+ 
+ .about-title {
+     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+     font-size: 4rem;
+     font-weight: 300;
+     letter-spacing: 8px;
+     color: #fffce1;
+     margin-bottom: 1.5rem;
+     line-height: 1.1;
+ }
+ 
+ .about-tagline {
+     font-family: 'Helvetica Neue', 'Arial', sans-serif;
+     font-size: 0.85rem;
+     color: rgba(255, 252, 225, 0.5);
+     letter-spacing: 1px;
+     line-height: 1.8;
+     margin-bottom: 3rem;
+     font-weight: 300;
+     font-style: italic;
+ }
+ 
+ .about-content-text {
+     display: flex;
+     flex-direction: column;
+     gap: 1.5rem;
+ }
+ 
+ .about-paragraph {
+     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+     font-size: 1rem;
+     color: rgba(255, 252, 225, 0.75);
+     line-height: 1.9;
+     margin: 0;
+     letter-spacing: 0.5px;
+ }
+ 
+ /* 联系区域样式 - 高级感左右分割布局 */
+ .contact-section {
+     min-height: 100vh;
+     padding: 20vh 4rem 10vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+ }
+ 
+ .contact-container {
+     max-width: 1400px;
+     width: 100%;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 8rem;
+     align-items: center;
+     background: rgba(255, 255, 255, 0.03);
+     backdrop-filter: blur(25px);
+     -webkit-backdrop-filter: blur(25px);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     border-radius: 12px;
+     padding: 4rem;
+ }
+ 
+ .contact-info-column {
+     padding-right: 4rem;
+ }
+ 
+ .contact-title {
+     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+     font-size: 5rem;
+     font-weight: 300;
+     letter-spacing: 8px;
+     color: #fffce1;
+     margin-bottom: 2rem;
+     line-height: 1.1;
+ }
+ 
+ .contact-tagline {
+     font-family: 'Helvetica Neue', 'Arial', sans-serif;
+     font-size: 0.85rem;
+     color: rgba(255, 252, 225, 0.5);
+     letter-spacing: 1px;
+     line-height: 1.8;
+     margin-bottom: 3rem;
+     font-weight: 300;
+ }
+ 
+ .contact-details {
+     display: flex;
+     flex-direction: column;
+     gap: 3rem;
+ }
+ 
+ .contact-detail-item {
+     position: relative;
+ }
+ 
+ .contact-label {
+     display: block;
+     font-family: 'Helvetica Neue', 'Arial', sans-serif;
+     font-size: 0.7rem;
+     letter-spacing: 4px;
+     color: rgba(255, 135, 9, 0.9);
+     margin-bottom: 0.8rem;
+     text-transform: uppercase;
+ }
+ 
+ .contact-value {
+     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+     font-size: 1.8rem;
+     font-weight: 400;
+     color: #fffce1;
+     margin: 0;
+     letter-spacing: 1px;
+     line-height: 1.4;
+ }
+ 
+ .contact-form-column {
+    padding-left: 0;
+    border-left: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+ 
+ .contact-form {
+     display: flex;
+     flex-direction: column;
+     gap: 2.5rem;
+ }
+ 
+ .form-group {
+     display: flex;
+     flex-direction: column;
+     gap: 0.8rem;
+     position: relative;
+ }
+ 
+ .form-label {
+     font-family: 'Helvetica Neue', 'Arial', sans-serif;
+     font-size: 0.7rem;
+     letter-spacing: 4px;
+     color: rgba(255, 135, 9, 0.9);
+     text-transform: uppercase;
+ }
+ 
+ .form-input,
+ .form-textarea {
+     background: transparent;
+     border: none;
+     border-bottom: 0.5px solid rgba(255, 252, 225, 0.2);
+     padding: 1rem 0;
+     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+     font-size: 1.2rem;
+     color: #fffce1;
+     outline: none;
+     position: relative;
+     width: 100%;
+ }
+ 
+ .form-input::placeholder,
+ .form-textarea::placeholder {
+     color: rgba(255, 252, 225, 0.3);
+ }
+ 
+ .form-input::after,
+ .form-textarea::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     width: 0;
+     height: 1px;
+     background: linear-gradient(90deg, transparent, #ff8709, transparent);
+     transition: width 0.4s ease, left 0.4s ease;
+ }
+ 
+ .form-group::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     width: 0;
+     height: 1px;
+     background: linear-gradient(90deg, transparent, #ff8709, transparent);
+     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ 
+ .form-group:focus-within::after {
+     width: 100%;
+     left: 0;
+ }
+ 
+ .form-textarea {
+     resize: vertical;
+     min-height: 120px;
+ }
+ 
+ .form-submit {
+    margin-top: 0;
+    padding: 0;
+    background: linear-gradient(135deg, rgba(14, 16, 15, 0.8) 0%, rgba(14, 16, 15, 0.4) 100%);
+    border: 1px solid rgba(255, 135, 9, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+    align-self: center;
+    max-width: 100%;
+    display: block;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    position: relative;
+}
+
+.form-submit:hover {
+    border-color: #ff8709;
+    transform: scale(1.02);
+    box-shadow: 0 30px 60px rgba(255, 135, 9, 0.2);
+}
+
+.form-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 135, 9, 0.2), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+}
+
+.form-submit:hover::before {
+    left: 100%;
+}
+ 
+ button {
+     padding: 1rem 2rem;
+     background: linear-gradient(45deg, #ff8709, #f7bdf8);
+     border: none;
+     border-radius: 4px;
+     color: #0e100f;
+     font-weight: bold;
+     cursor: pointer;
+     transition: transform 0.3s ease;
+ }
+ 
+ button:hover {
+     transform: translateY(-2px);
+ }
+ 
+ /* 模态框样式 */
+ .modal {
+     display: none;
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: rgba(0, 0, 0, 1);
+     z-index: 9999;
+     justify-content: center;
+     align-items: center;
+     overflow: hidden;
+     backdrop-filter: blur(10px);
+     box-shadow: 0 0 0 9999px rgba(0, 0, 0, 1);
+ }
+
+ .modal.show {
+     display: flex;
+ }
+
+ .modal-content {
+     background: transparent;
+     width: 100%;
+     max-width: 1200px;
+     max-height: 95vh;
+     overflow-y: auto;
+     position: relative;
+     padding: 2rem;
+     scroll-behavior: smooth;
+ }
+
+ .modal-content::-webkit-scrollbar {
+     width: 8px;
+ }
+
+ .modal-content::-webkit-scrollbar-track {
+     background: rgba(255, 255, 255, 0.1);
+ }
+
+ .modal-content::-webkit-scrollbar-thumb {
+     background: rgba(255, 135, 9, 0.5);
+     border-radius: 4px;
+ }
+
+ .modal-content::-webkit-scrollbar-thumb:hover {
+     background: rgba(255, 135, 9, 0.8);
+ }
+
+/* 当模态框打开时，禁止主页面滚动 */
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+/* 针对Firefox */
+.modal-content {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+ .modal-close {
+     position: fixed;
+     top: 1.5rem;
+     right: 1.5rem;
+     background: none;
+     border: none;
+     color: rgba(255, 255, 255, 0.3);
+     font-size: 1.2rem;
+     cursor: pointer;
+     z-index: 3001;
+     transition: color 0.3s ease;
+     width: 40px;
+     height: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .modal-close:hover {
+     color: rgba(255, 255, 255, 0.9);
+ }
+
+ .modal-image-wrapper {
+     display: flex;
+     flex-direction: column;
+     gap: 10vh;
+ }
+
+ .modal-main-image {
+     position: relative;
+     width: 100%;
+ }
+
+ .modal-main-image .modal-image {
+     width: 100%;
+     max-height: 70vh;
+     object-fit: cover;
+     border-radius: 4px;
+ }
+
+ .modal-text-overlay {
+     position: absolute;
+     bottom: 10%;
+     right: 5%;
+     width: 40%;
+     padding: 2rem;
+     background: rgba(255, 255, 255, 0.05);
+     backdrop-filter: blur(20px);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     border-radius: 8px;
+ }
+
+ .modal-text-overlay h3 {
+     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+     font-size: 2rem;
+     color: #f5f5f5;
+     letter-spacing: 4px;
+     margin-bottom: 1rem;
+ }
+
+ .modal-text-overlay p {
+     font-family: 'Helvetica Neue', 'Arial', sans-serif;
+     font-size: 0.9rem;
+     line-height: 2.0;
+     color: rgba(255, 255, 255, 0.6);
+ }
+
+ .modal-secondary-image {
+     width: 80%;
+     margin-left: auto;
+     margin-right: 0;
+ }
+
+ .modal-secondary-image .modal-image {
+     width: 100%;
+     max-height: 60vh;
+     object-fit: cover;
+     border-radius: 4px;
+ }
+ 
+ /* 响应式设计 */
+ @media (max-width: 768px) {
+     /* 导航栏 */
+     .navbar {
+         padding: 1rem;
+     }
+     
+     .logo {
+         font-size: 1.2rem;
+     }
+     
+     .nav-links {
+         gap: 1rem;
+     }
+     
+     /* 英雄区域 */
+     h1 {
+         font-size: 3rem;
+     }
+     
+     .tagline {
+         font-size: 0.8rem;
+         letter-spacing: 4px;
+     }
+     
+     /* 主要内容 */
+     .main-content {
+         padding: 2rem 1rem;
+     }
+     
+     h2 {
+         font-size: 2rem;
+     }
+     
+     /* 画廊 */
+     .product-item {
+         flex-direction: column !important;
+         min-height: auto;
+         margin-bottom: 15vh;
+         align-items: center !important;
+     }
+     
+     .product-item .product-image {
+         width: 100%;
+         height: 50vh;
+         margin: 0 !important;
+     }
+     
+     .product-item .product-info {
+        position: relative !important;
+        width: 90%;
+        right: auto !important;
+        left: auto !important;
+        bottom: auto !important;
+        margin: -40px auto 0 !important;
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(14, 16, 15, 0.85);
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+    
+    .product-title {
+        font-size: 1.8rem;
+    }
+    
+    .product-description {
+        font-size: 0.85rem;
+    }
+     
+     /* 关于区域 */
+     .about-section {
+         padding: 10vh 2rem 8vh;
+         min-height: auto;
+     }
+     
+     .about-container {
+         grid-template-columns: 1fr;
+         gap: 3rem;
+         padding: 2.5rem;
+     }
+     
+     .about-image-column {
+         order: -1;
+     }
+     
+     .about-image-wrapper {
+         max-width: 280px;
+     }
+     
+     .about-text-column {
+         padding-left: 0;
+         text-align: center;
+     }
+     
+     .about-title {
+         font-size: 2.5rem;
+         letter-spacing: 4px;
+         margin-bottom: 1rem;
+     }
+     
+     .about-tagline {
+         font-size: 0.8rem;
+         margin-bottom: 2rem;
+     }
+     
+     .about-paragraph {
+         font-size: 0.95rem;
+         text-align: left;
+     }
+     
+     /* 联系区域 */
+     .contact-section {
+         padding: 15vh 2rem 8vh;
+         min-height: auto;
+     }
+     
+     .contact-container {
+         grid-template-columns: 1fr;
+         gap: 4rem;
+         padding: 2.5rem;
+     }
+     
+     .contact-info-column {
+         padding-right: 0;
+         text-align: center;
+     }
+     
+     .contact-title {
+         font-size: 3rem;
+         letter-spacing: 4px;
+         margin-bottom: 3rem;
+     }
+     
+     .contact-details {
+         align-items: center;
+     }
+     
+     .contact-value {
+         font-size: 1.3rem;
+     }
+     
+     .contact-form-column {
+         padding-left: 0;
+         border-left: none;
+         border-top: 1px solid rgba(255, 252, 225, 0.1);
+         padding-top: 3rem;
+     }
+     
+     /* 模态框 */
+     .modal-content {
+         padding: 1rem;
+     }
+     
+     .modal-text-overlay {
+         width: 60%;
+         padding: 1.5rem;
+         bottom: 5%;
+         right: 3%;
+     }
+     
+     .modal-text-overlay h3 {
+         font-size: 1.5rem;
+     }
+     
+     .modal-secondary-image {
+         width: 90%;
+     }
+ }
+ 
+ @media (max-width: 480px) {
+    /* 英雄区域 */
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .tagline {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+    }
+    
+    .hint {
+        font-size: 1.2rem;
+    }
+    
+    /* 导航栏 */
+    .nav-links {
+        font-size: 0.9rem;
+    }
+    
+    /* 画廊 */
+    .product-item {
+        flex-direction: column !important;
+        min-height: auto;
+        margin-bottom: 10vh;
+        align-items: center !important;
+    }
+    
+    .product-item .product-image {
+        width: 100%;
+        height: 40vh;
+        margin: 0 !important;
+    }
+    
+    .product-item .product-info {
+        position: relative !important;
+        width: 95%;
+        right: auto !important;
+        left: auto !important;
+        bottom: auto !important;
+        margin: -30px auto 0 !important;
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(14, 16, 15, 0.85);
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+    
+    .product-title {
+        font-size: 1.2rem;
+    }
+    
+    .product-description {
+        font-size: 0.85rem;
+    }
+    
+    /* 关于区域 */
+    .about-section {
+        padding: 10vh 1.5rem 6vh;
+    }
+    
+    .about-container {
+        padding: 2rem;
+        gap: 2.5rem;
+    }
+    
+    .about-image-wrapper {
+        max-width: 220px;
+    }
+    
+    .about-title {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+    
+    .about-tagline {
+        font-size: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .about-paragraph {
+        font-size: 0.9rem;
+    }
+    
+    /* 联系区域 */
+    .contact-section {
+        padding: 12vh 1.5rem 6vh;
+    }
+    
+    .contact-container {
+        padding: 2rem;
+    }
+    
+    .contact-title {
+        font-size: 2.2rem;
+        letter-spacing: 3px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-tagline {
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .contact-value {
+        font-size: 1.1rem;
+    }
+    
+    .form-input,
+    .form-textarea {
+        font-size: 1rem;
+    }
+    
+    .form-submit {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* 模态框 */
+    .modal-close {
+        top: 1rem;
+        right: 1rem;
+        font-size: 1rem;
+    }
+    
+    .modal-content {
+        padding: 0.5rem;
+    }
+    
+    .modal-image-wrapper {
+        gap: 5vh;
+    }
+    
+    .modal-main-image .modal-image {
+        max-height: 50vh;
+    }
+    
+    .modal-text-overlay {
+        position: relative;
+        width: 100%;
+        bottom: auto;
+        right: auto;
+        margin-top: -50px;
+        border-radius: 4px;
+    }
+    
+    .modal-text-overlay h3 {
+        font-size: 1.3rem;
+    }
+    
+    .modal-text-overlay p {
+        font-size: 0.85rem;
+    }
+    
+    .modal-secondary-image {
+        width: 100%;
+    }
+    
+    .modal-secondary-image .modal-image {
+        max-height: 40vh;
+    }
+     
+    /* 页脚 */
+    footer {
+        padding: 1.5rem;
+    }
+    
+    .footer-content {
+        font-size: 0.9rem;
+    }
+}
+
+/* 页脚样式 */
+footer {
+    background: transparent;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #fffce1;
+    margin-top: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.footer-motto {
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255, 252, 225, 0.4);
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.footer-student-info {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255, 252, 225, 0.5);
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.footer-copyright {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(255, 252, 225, 0.3);
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.logo {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.navbar {
+    /* 移除默认动画，由JavaScript控制 */
+}
+
+/* Contact 区域水纹淡入动画 */
+.contact-fade-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-fade-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* About 区域水纹淡入动画 */
+.about-fade-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-fade-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Logo 区域水纹淡入动画 */
+.logo-section h2,
+.logo-section p,
+.logo-section img {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-section h2.visible,
+.logo-section p.visible,
+.logo-section img.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Logo 独立页面样式 */
+.logo-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: #0e100f;
+    background-blend-mode: color-dodge;
+}
+
+.logo-outer {
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(89.08% 84.62% at 16.54% 78.46%,rgb(255, 135, 9) 0%,rgb(247, 189, 248) 100%),
+        url("https://assets.codepen.io/16327/noise-e82662fe.png");
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+svg.logo {
+    width: 66%;
+    max-height: 66%;
+}
+
+.logo-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    padding: 4rem;
+    text-align: center;
+}
+
+.logo-header {
+    margin-bottom: 2rem;
+}
+
+.logo-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0e100f;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1rem;
+    white-space: nowrap;
+}
+
+.logo-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    color: #0e100f;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.logo-divider {
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #0e100f, transparent);
+    margin: 2rem auto;
+}
+
+.logo-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.logo-info-item {
+    flex: 1;
+    min-width: 200px;
+}
+
+.info-label {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #0e100f;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+}
+
+.info-value {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #0e100f;
+}
+
+.logo-footer {
+    margin-top: 2rem;
+}
+
+.logo-motto {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #0e100f;
+    opacity: 0.8;
+}
+
+/* Logo 页面响应式设计 */
+@media (max-width: 768px) {
+    .logo-main {
+        padding: 80px 1rem;
+    }
+    
+    .logo-outer {
+        width: 70%;
+        height: 70%;
+    }
+    
+    .logo-card {
+        padding: 3rem;
+    }
+    
+    .logo-name {
+        font-size: 4rem;
+        letter-spacing: 1px;
+        white-space: nowrap;
+    }
+    
+    .logo-tagline {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+    }
+    
+    .info-label {
+        font-size: 0.7rem;
+    }
+    
+    .info-value {
+        font-size: 1rem;
+    }
+    
+    .logo-motto {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-main {
+        padding: 60px 1rem;
+    }
+    
+    .logo-outer {
+        width: 90%;
+        height: 90%;
+        border-radius: 2rem;
+    }
+    
+    .logo-card {
+        padding: 2rem;
+    }
+    
+    .logo-name {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+        white-space: nowrap;
+    }
+    
+    .logo-tagline {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+    
+    .logo-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .logo-info-item {
+        min-width: 100%;
+    }
+    
+    .info-label {
+        font-size: 0.65rem;
+    }
+    
+    .info-value {
+        font-size: 0.9rem;
+    }
+    
+    .logo-motto {
+        font-size: 0.9rem;
+    }
+}

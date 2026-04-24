@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo | Captain's Café</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="logo-page">
+    <nav class="navbar">
+        <a href="index.html" class="logo" data-zh="船长咖啡馆" data-en="Captain's Café">Captain's Café</a>
+        <ul class="nav-links">
+            <li><a href="index.html#home" data-zh="首页" data-en="Home">Home</a></li>
+            <li><a href="index.html#gallery" data-zh="特色" data-en="Specialties">Specialties</a></li>
+            <li><a href="index.html#about" data-zh="关于" data-en="About">About</a></li>
+            <li><a href="index.html#contact" data-zh="联系" data-en="Contact">Contact</a></li>
+            <li><a href="logo.html" data-zh="标志" data-en="Logo" style="color: #ff8709;">Logo</a></li>
+        </ul>
+        <button class="lang-toggle" data-zh="EN" data-en="中">EN</button>
+    </nav>
+    
+    <main class="logo-main">
+        <div class="logo-outer">     
+            <div class="logo-card">
+                <div class="logo-header">
+                    <div class="logo-name" data-zh="船长咖啡馆" data-en="Captain's Café">Captain's Café</div>
+                    <div class="logo-tagline" data-zh="咖啡 · 茶 · 餐饮" data-en="COFFEE · TEA · DINNING">COFFEE · TEA · DINNING</div>
+                </div>
+                <div class="logo-divider"></div>
+                <div class="logo-info">
+                    <div class="logo-info-item">
+                        <span class="info-label" data-zh="邮箱" data-en="EMAIL">EMAIL</span>
+                        <span class="info-value">D24090600565@cityu.edu.mo</span>
+                    </div>
+                    <div class="logo-info-item">
+                        <span class="info-label" data-zh="电话" data-en="PHONE">PHONE</span>
+                        <span class="info-value">18011578502</span>
+                    </div>
+                </div>
+                <div class="logo-footer">
+                    <div class="logo-motto" data-zh="即使在寂静中，也要继续航行。" data-en="Keep sailing, even in the stillness.">Keep sailing, even in the stillness.</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p class="footer-motto" data-zh="即使在寂静中，也要继续航行。" data-en="Keep sailing, even in the stillness.">Keep sailing, even in the stillness.</p>
+            <p class="footer-student-info">Name: Zizheng Chan</p>
+            <p class="footer-student-info">Student ID: 24160104</p>
+            <p class="footer-copyright">&copy; 2026 Captain's Café</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin3.min.js"></script>
+    
+    <script>
+        gsap.registerPlugin(MorphSVGPlugin);
+        
+        // 检查是否是刷新或首次进入页面
+        if (performance.navigation.type === 1 || performance.navigation.type === 0) {
+            // 为导航栏添加滑入动画
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                navbar.style.animation = 'slideIn 0.5s ease-out';
+            }
+        }
+        
+        window.scrollTo(0, 0);
+        
+        // Cursor-driven perspective tilt animation
+        const main = document.querySelector("main"); 
+        
+        gsap.set("main", { perspective: 650 }); 
+        
+        const outerRX = gsap.quickTo(".logo-outer", "rotationX", { ease: "power3" }); 
+        const outerRY = gsap.quickTo(".logo-outer", "rotationY", { ease: "power3" }); 
+        const innerX = gsap.quickTo(".logo-card", "x", { ease: "power3" }); 
+        const innerY = gsap.quickTo(".logo-card", "y", { ease: "power3" }); 
+        
+        main.addEventListener("pointermove", (e) => { 
+          outerRX(gsap.utils.interpolate(15, -15, e.y / window.innerHeight)); 
+          outerRY(gsap.utils.interpolate(-15, 15, e.x / window.innerWidth)); 
+          innerX(gsap.utils.interpolate(-30, 30, e.x / window.innerWidth)); 
+          innerY(gsap.utils.interpolate(-30, 30, e.y / window.innerHeight)); 
+        }); 
+        
+        main.addEventListener("pointerleave", (e) => { 
+          outerRX(0); 
+          outerRY(0); 
+          innerX(0); 
+          innerY(0); 
+        });
+        
+        // 语言切换功能
+        const langToggle = document.querySelector('.lang-toggle');
+        
+        // 切换语言函数
+        function toggleLanguage(isEn) {
+            // 切换所有带 data-zh 属性的元素
+            document.querySelectorAll('[data-zh]').forEach(el => {
+                el.textContent = isEn ? el.dataset.en : el.dataset.zh;
+            });
+            
+            // 切换按钮文本
+            langToggle.textContent = isEn ? '中' : 'EN';
+            
+            // 保存到 localStorage
+            localStorage.setItem('captains-cafe-lang', isEn ? 'en' : 'zh');
+        }
+        
+        // 初始化语言
+        function initLanguage() {
+            try {
+                // 优先从 localStorage 读取
+                const savedLang = localStorage.getItem('captains-cafe-lang');
+                
+                // 如果没有保存的语言，默认设置为英文
+                let isEn = true;
+                if (savedLang) {
+                    isEn = savedLang === 'en';
+                }
+                
+                // 设置语言
+                toggleLanguage(isEn);
+            } catch (error) {
+                console.error('Error initializing language:', error);
+                // 即使出错也默认设置为英文
+                toggleLanguage(true);
+            }
+        }
+        
+        // 切换语言事件
+        if (langToggle) {
+            langToggle.addEventListener('click', () => {
+                try {
+                    // 检查当前是否为英文
+                    const currentLang = localStorage.getItem('captains-cafe-lang');
+                    const isEn = currentLang !== 'en';
+                    toggleLanguage(isEn);
+                } catch (error) {
+                    console.error('Error toggling language:', error);
+                }
+            });
+        }
+        
+        // 初始化
+        initLanguage();
+    </script>
+</body>
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captain's Café</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="home-page">
+    <nav class="navbar">
+        <a href="#" class="logo" data-zh="船长咖啡馆" data-en="Captain's Café">Captain's Café</a>
+        <ul class="nav-links">
+            <li><a href="#home" data-zh="首页" data-en="Home">Home</a></li>
+            <li><a href="#gallery" data-zh="特色" data-en="Specialties">Specialties</a></li>
+            <li><a href="#about" data-zh="关于" data-en="About">About</a></li>
+            <li><a href="#contact" data-zh="联系" data-en="Contact">Contact</a></li>
+            <li><a href="logo.html" data-zh="标志" data-en="Logo">Logo</a></li>
+        </ul>
+        <button class="lang-toggle" data-zh="EN" data-en="中">EN</button>
+    </nav>
+    
+    <section id="home" class="hero">
+        <div class='wrapper'> 
+          <svg class="transition" viewBox="0 0 100 100" preserveAspectRatio="xMidYMin slice"> 
+            <defs> 
+              <linearGradient id="grad" x1="0" y1="0" x2="99" y2="99" gradientUnits="userSpaceOnUse"> 
+                 <stop offset="0.2" stop-color="rgb(255, 135, 9)" /> 
+                  <stop offset="0.7" stop-color="rgb(247, 189, 248)" /> 
+              </linearGradient> 
+            </defs> 
+            <path class="path" stroke="url(#grad)" fill="url(#grad)" stroke-width="2px" vector-effect="non-scaling-stroke" d="M 0 100 V 100 Q 50 100 100 100 V 100 z" /> 
+          </svg> 
+        </div>
+        
+        <div class="container">
+            <h1 data-zh="船长咖啡馆" data-en="Captain's Café">Captain's Café</h1>
+            <p class="tagline" data-zh="咖啡 · 茶 · 餐饮" data-en="COFFEE · TEA · DINNING">COFFEE · TEA · DINNING</p>
+        </div>
+    </section>
+    
+    <div class="main-content">
+        <section id="gallery" class="section">
+            <h2 data-zh="我们的特色" data-en="Our Specialties">Our Specialties</h2>
+            <div class="gallery-container">
+                <div class="product-item" 
+                     data-title-zh="半熟の月" 
+                     data-title-en="Half-Baked Moon" 
+                     data-desc-zh="轻烘烤的芝士在烤箱中保留着柔软呼吸的口感，半熟的质地如同刚刚苏醒的云朵。入口是绵密的咸香，芝士的旋律在舌尖回荡，余韵带着温柔的奶香甜意。一口咬下，午后的慵懒与闲适尽在其中。" 
+                     data-desc-en="The lightly baked cheese retains a soft, breathing texture in the oven, with a half-cooked consistency like freshly awakened clouds. On the palate, it's dense and savory with a cheesy melody, while the aftertaste holds a gentle milky sweetness. One bite captures all the relaxation and laziness of the afternoon." 
+                     data-image1="产品/半熟の月/IMG_7930.png" 
+                    data-image2="产品/半熟の月/IMG_7932.png">
+                    <img src="产品/半熟の月/IMG_7930.png" alt="Half-Baked Moon" class="product-image">
+                    <div class="product-info">
+                        <span class="product-number">01</span>
+                        <h3 class="product-title">半熟の月</h3>
+                        <span class="product-divider"></span>
+                        <p class="product-description">轻烘烤的芝士在烤箱中保留着柔软呼吸的口感，半熟的质地如同刚刚苏醒的云朵。入口是绵密的咸香，芝士的旋律在舌尖回荡，余韵带着温柔的奶香甜意。一口咬下，午后的慵懒与闲适尽在其中。</p>
+                    </div>
+                </div>
+                
+                <div class="product-item" 
+                     data-title-zh="东方茶叙" 
+                     data-title-en="Oriental Tea Talk" 
+                     data-desc-zh="取一杯东方茶，在沸水中慢慢舒展茶叶，茶香缭绕，带着山水间的清新。茶汤入口温润甘甜，不浓不燥，如同一场静谧的茶叙，让时光变得柔软而悠长。" 
+                     data-desc-en="Take a cup of oriental tea, slowly unfurling the leaves in boiling water, with tea aroma lingering, carrying the freshness of mountains and waters. The tea soup is warm and sweet on the palate, neither strong nor dry, like a quiet tea conversation, making time soft and long." 
+                     data-image1="产品/东方茶叙/IMG_7975.png" 
+                    data-image2="产品/东方茶叙/IMG_7976.png">
+                    <img src="产品/东方茶叙/IMG_7975.png" alt="Oriental Tea Talk" class="product-image">
+                    <div class="product-info">
+                        <span class="product-number">02</span>
+                        <h3 class="product-title" data-title-zh="东方茶叙" data-title-en="Oriental Tea Talk"></h3>
+                        <span class="product-divider"></span>
+                        <p class="product-description" data-desc-zh="取一杯东方茶，在沸水中慢慢舒展茶叶，茶香缭绕，带着山水间的清新。茶汤入口温润甘甜，不浓不燥，如同一场静谧的茶叙，让时光变得柔软而悠长。" data-desc-en="Take a cup of oriental tea, slowly unfurling the leaves in boiling water, with tea aroma lingering, carrying the freshness of mountains and waters. The tea soup is warm and sweet on the palate, neither strong nor dry, like a quiet tea conversation, making time soft and long."></p>
+                    </div>
+                </div>
+                
+                <div class="product-item" 
+                     data-title-zh="丝绒奶咖" 
+                     data-title-en="Velvet Milk Coffee" 
+                     data-desc-zh="绵密的奶沫与浓郁的咖啡在杯中交织，编织出丝绒般的顺滑口感。入口先是温柔的奶香，随后是咖啡的烘焙气息，如被云朵轻轻托起，每一口都带着治愈的柔软。" 
+                     data-desc-en="Creamy milk foam and rich coffee intertwine in the cup, creating a velvety smooth texture. On the palate, it's gentle milk aroma followed by coffee's roasted scent, smooth like being gently held by clouds, each sip carrying healing softness." 
+                     data-image1="产品/绒云拿铁/IMG_7970.png" 
+                    data-image2="产品/绒云拿铁/IMG_7971.png">
+                    <img src="产品/绒云拿铁/IMG_7970.png" alt="Velvet Milk Coffee" class="product-image">
+                    <div class="product-info">
+                        <span class="product-number">03</span>
+                        <h3 class="product-title" data-title-zh="丝绒奶咖" data-title-en="Velvet Milk Coffee"></h3>
+                        <span class="product-divider"></span>
+                        <p class="product-description" data-desc-zh="绵密的奶沫与浓郁的咖啡在杯中交织，编织出丝绒般的顺滑口感。入口先是温柔的奶香，随后是咖啡的烘焙气息，如被云朵轻轻托起，每一口都带着治愈的柔软。" data-desc-en="Creamy milk foam and rich coffee intertwine in the cup, creating a velvety smooth texture. On the palate, it's gentle milk aroma followed by coffee's roasted scent, smooth like being gently held by clouds, each sip carrying healing softness."></p>
+                    </div>
+                </div>
+                
+                <div class="product-item" 
+                     data-title-zh="熔岩雪融" 
+                     data-title-en="Lava Snow Fusion" 
+                     data-desc-zh="温热的温度下，浓郁的黑巧克力熔岩缓缓流淌，与丝滑的冰淇淋碰撞。冰与火在舌尖共舞，先有冰的柔和，随后被熔岩的浓郁包裹。层层叠叠的苦与甜，如同一场盛大而温柔的相遇。" 
+                     data-desc-en="Rich dark chocolate lava flows slowly at warm temperature, colliding with creamy ice cream. Ice and fire dance on the tongue. First comes the softness of ice, then wrapped in the richness of lava. The layered bitterness and sweetness feel like a grand yet gentle encounter." 
+                     data-image1="产品/熔岩雪融/IMG_8005.png" 
+                    data-image2="产品/熔岩雪融/IMG_8006.png">
+                    <img src="产品/熔岩雪融/IMG_8005.png" alt="Lava Snow Fusion" class="product-image">
+                    <div class="product-info">
+                        <span class="product-number">04</span>
+                        <h3 class="product-title" data-title-zh="熔岩雪融" data-title-en="Lava Snow Fusion"></h3>
+                        <span class="product-divider"></span>
+                        <p class="product-description" data-desc-zh="温热的温度下，浓郁的黑巧克力熔岩缓缓流淌，与丝滑的冰淇淋碰撞。冰与火在舌尖共舞，先有冰的柔和，随后被熔岩的浓郁包裹。层层叠叠的苦与甜，如同一场盛大而温柔的相遇。" data-desc-en="Rich dark chocolate lava flows slowly at warm temperature, colliding with creamy ice cream. Ice and fire dance on the tongue. First comes the softness of ice, then wrapped in the richness of lava. The layered bitterness and sweetness feel like a grand yet gentle encounter."></p>
+                    </div>
+                </div>
+                
+                <div class="product-item" 
+                     data-title-zh="脆甜日光" 
+                     data-title-en="Crisp Sweet Sunlight" 
+                     data-desc-zh="酥脆的甜苹果包裹在清淡的萝卜香气中，保留住果蔬最本真的活力。入口是明亮的甜，带着一丝湿润清爽的回味，如同一杯盛满阳光的露珠，唤醒倦怠的午后。" 
+                     data-desc-en="Crisp sweet apples wrapped in a light radish aroma, preserving the most authentic vitality of fruits and vegetables in the fresh juice. On the palate, it's bright sweetness with a touch of moist and refreshing aftertaste, like a cup of dew filled with sunlight, awakening the tired afternoon." 
+                     data-image1="产品/脆玉清汁/IMG_7905.png" 
+                    data-image2="产品/脆玉清汁/IMG_7921.png">
+                    <img src="产品/脆玉清汁/IMG_7905.png" alt="Crisp Sweet Sunlight" class="product-image">
+                    <div class="product-info">
+                        <span class="product-number">05</span>
+                        <h3 class="product-title" data-title-zh="脆甜日光" data-title-en="Crisp Sweet Sunlight"></h3>
+                        <span class="product-divider"></span>
+                        <p class="product-description" data-desc-zh="酥脆的甜苹果包裹在清淡的萝卜香气中，保留住果蔬最本真的活力。入口是明亮的甜，带着一丝湿润清爽的回味，如同一杯盛满阳光的露珠，唤醒倦怠的午后。" data-desc-en="Crisp sweet apples wrapped in a light radish aroma, preserving the most authentic vitality of fruits and vegetables in the fresh juice. On the palate, it's bright sweetness with a touch of moist and refreshing aftertaste, like a cup of dew filled with sunlight, awakening the tired afternoon."></p>
+                    </div>
+                </div>
+                
+                <div class="product-item" 
+                     data-title-zh="梨风青露" 
+                     data-title-en="Pear Breeze" 
+                     data-desc-zh="爽脆的黄瓜与甜蜜的雪梨在搅拌机中碰撞，诞生一杯满溢清新的饮品。植物的清凉与水果的甜蜜交织，入口无负担的清爽，如同一阵风吹过林间，抚慰舌尖的燥热。" 
+                     data-desc-en="Crisp cucumber and sweet pear collide in the blender to create a cup full of freshness. With the coolness of plants and the sweetness of fruit, it's a burden-free refreshment on the palate, like a wind blowing through the woods, soothing the heat on the tongue." 
+                     data-image1="产品/青梨凉夏/IMG_7882.png" 
+                    data-image2="产品/青梨凉夏/IMG_7884.png">
+                    <img src="产品/青梨凉夏/IMG_7882.png" alt="Pear Breeze" class="product-image">
+                    <div class="product-info">
+                        <span class="product-number">06</span>
+                        <h3 class="product-title" data-title-zh="梨风青露" data-title-en="Pear Breeze"></h3>
+                        <span class="product-divider"></span>
+                        <p class="product-description" data-desc-zh="爽脆的黄瓜与甜蜜的雪梨在搅拌机中碰撞，诞生一杯满溢清新的饮品。植物的清凉与水果的甜蜜交织，入口无负担的清爽，如同一阵风吹过林间，抚慰舌尖的燥热。" data-desc-en="Crisp cucumber and sweet pear collide in the blender to create a cup full of freshness. With the coolness of plants and the sweetness of fruit, it's a burden-free refreshment on the palate, like a wind blowing through the woods, soothing the heat on the tongue."></p>
+                    </div>
+                </div>
+                
+                <div class="product-item" 
+                     data-title-zh="桃蜜初绽" 
+                     data-title-en="Peach Honey Bloom" 
+                     data-desc-zh="新鲜黄桃的甜蜜，经过日晒饱满多汁，淋上一勺温和顺滑的蜂蜜。每一口都是酥嫩果肉与柔软蜜香的交融，如同咬下整个初夏的果园，甜度恰到好处，清新而温柔。" 
+                     data-desc-en="The sweetness of fresh yellow peaches, sun-ripened to plump juiciness, drizzled with a spoonful of mild and smooth honey. Each bite combines crisp tender fruit with soft honey aroma, like biting into an entire early summer orchard, with just the right amount of sweetness—refreshing and gentle." 
+                     data-image1="产品/蜜酿桃溪/IMG_7945.png" 
+                    data-image2="产品/蜜酿桃溪/IMG_7953.png">
+                    <img src="产品/蜜酿桃溪/IMG_7945.png" alt="Peach Honey Bloom" class="product-image">
+                    <div class="product-info">
+                        <span class="product-number">07</span>
+                        <h3 class="product-title" data-title-zh="桃蜜初绽" data-title-en="Peach Honey Bloom"></h3>
+                        <span class="product-divider"></span>
+                        <p class="product-description" data-desc-zh="新鲜黄桃的甜蜜，经过日晒饱满多汁，淋上一勺温和顺滑的蜂蜜。每一口都是酥嫩果肉与柔软蜜香的交融，如同咬下整个初夏的果园，甜度恰到好处，清新而温柔。" data-desc-en="The sweetness of fresh yellow peaches, sun-ripened to plump juiciness, drizzled with a spoonful of mild and smooth honey. Each bite combines crisp tender fruit with soft honey aroma, like biting into an entire early summer orchard, with just the right amount of sweetness—refreshing and gentle."></p>
+                    </div>
+                </div>
+                
+                <div class="product-item" 
+                     data-title-zh="雪落奶咖" 
+                     data-title-en="Snowfall Milk Coffee" 
+                     data-desc-zh="绵密的冰淇淋在温热奶茶中缓缓融化，奶与茶的香气交织成柔软的甜，如同把春日所有的云朵揉进杯中。入口丝滑温柔，甜而不腻，每一口都被治愈的温暖包裹。" 
+                     data-desc-en="Creamy ice cream slowly melts in warm milk tea, with milk and tea aromas intertwining into soft sweetness, like kneading all the spring clouds into the cup. On the palate, it's silky and gentle, sweet but not cloying, each sip wrapped in healing warmth." 
+                     data-image1="产品/云顶奶霜/IMG_7988.png" 
+                    data-image2="产品/云顶奶霜/IMG_7989.png">
+                    <img src="产品/云顶奶霜/IMG_7988.png" alt="Snowfall Milk Coffee" class="product-image">
+                    <div class="product-info">
+                        <span class="product-number">08</span>
+                        <h3 class="product-title" data-title-zh="雪落奶咖" data-title-en="Snowfall Milk Coffee"></h3>
+                        <span class="product-divider"></span>
+                        <p class="product-description" data-desc-zh="绵密的冰淇淋在温热奶茶中缓缓融化，奶与茶的香气交织成柔软的甜，如同把春日所有的云朵揉进杯中。入口丝滑温柔，甜而不腻，每一口都被治愈的温暖包裹。" data-desc-en="Creamy ice cream slowly melts in warm milk tea, with milk and tea aromas intertwining into soft sweetness, like kneading all the spring clouds into the cup. On the palate, it's silky and gentle, sweet but not cloying, each sip wrapped in healing warmth."></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <div class="about-image-column">
+                    <div class="about-image-wrapper about-fade-item">
+                        <img src="产品/冰淬独白/IMG_7954.png" alt="Captain's Café" class="about-image">
+                    </div>
+                </div>
+                <div class="about-text-column">
+                    <h2 class="about-title about-fade-item" data-zh="我们的故事" data-en="OUR STORY">OUR STORY</h2>
+                    <p class="about-tagline about-fade-item" data-zh="时光在此慢下来，连接在此加深。" data-en="Where time slows down and connections deepen.">Where time slows down and connections deepen.</p>
+                    <div class="about-content-text">
+                        <p class="about-paragraph about-fade-item" data-zh="欢迎来到船长咖啡馆，一个藏在海浪与温暖之间的小小港湾。成立于2024年，我们的咖啡馆诞生于一个创造慢时光、深连接的空间的热情。" data-en="Welcome aboard Captain's Café, a cozy harbor tucked between waves and warmth. Established in 2024, our café was born from a passion for creating a space where time slows down and connections deepen.">Welcome aboard Captain's Café, a cozy harbor tucked between waves and warmth. Established in 2024, our café was born from a passion for creating a space where time slows down and connections deepen.</p>
+                        <p class="about-paragraph about-fade-item" data-zh="不赶时间，不排日程——只有慢时光、好陪伴和一杯完美冲泡的咖啡。我们的咖啡师都经过咖啡制作艺术培训，只使用来自世界各地可持续农场采购的最优质咖啡豆。" data-en="No rush, no schedules—just slow time, good company, and a perfectly brewed cup of coffee. Our baristas are trained in the art of coffee making, using only the finest beans sourced from sustainable farms around the world.">No rush, no schedules—just slow time, good company, and a perfectly brewed cup of coffee. Our baristas are trained in the art of coffee making, using only the finest beans sourced from sustainable farms around the world.</p>
+                        <p class="about-paragraph about-fade-item" data-zh="让香气带着你进行一次小小的旅行，哪怕只是一瞬间。我们的航海主题室内装饰配有温暖的木质色调、柔和的灯光和海洋装饰，为所有进门的客人营造温馨的氛围。" data-en="Let the aroma carry you away on a little voyage, even if only for a moment. Our nautical-themed interior features warm wood accents, soft lighting, and maritime decor that creates an inviting atmosphere for all who enter.">Let the aroma carry you away on a little voyage, even if only for a moment. Our nautical-themed interior features warm wood accents, soft lighting, and maritime decor that creates an inviting atmosphere for all who enter.</p>
+                        <p class="about-paragraph about-fade-item" data-zh="无论你是寻找一个安静的工作地点，还是与朋友聚会的场所，亦或是想要独自带一本好书享受片刻独处，船长咖啡馆都是你的选择。" data-en="Whether you're seeking a quiet spot to work, a place to catch up with friends, or simply a moment of solitude with a good book, Captain's Café is your port of call.">Whether you're seeking a quiet spot to work, a place to catch up with friends, or simply a moment of solitude with a good book, Captain's Café is your port of call.</p>
+                        <p class="about-paragraph about-fade-item" data-zh="我们为品质感到自豪，从手工调制的饮品到新鲜烘焙的糕点和轻食。我们菜单上的每一项都经过精心准备，注重细节。" data-en="We take pride in our commitment to quality, from our handcrafted beverages to our freshly baked pastries and light fare. Every item on our menu is prepared with care and attention to detail.">We take pride in our commitment to quality, from our handcrafted beverages to our freshly baked pastries and light fare. Every item on our menu is prepared with care and attention to detail.</p>
+                        <p class="about-paragraph about-fade-item" data-zh="进来，坐下，让你的灵魂轻轻航行。我们期待着欢迎你登船。" data-en="Come in, sit down, and let your soul sail gently. We look forward to welcoming you aboard.">Come in, sit down, and let your soul sail gently. We look forward to welcoming you aboard.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
+                <div class="contact-info-column">
+                    <h2 class="contact-title contact-fade-item" data-zh="联系我们" data-en="GET IN TOUCH">GET IN TOUCH</h2>
+                    <p class="contact-tagline contact-fade-item" data-zh="每一封邮件都是跨越海洋的漂流瓶，我在这里等待你的回响。" data-en="Every email is a message in a bottle crossing the ocean. I'm here waiting for your reply.">Every email is a message in a bottle crossing the ocean. I'm here waiting for your reply.</p>
+                    <div class="contact-details">
+                        <div class="contact-detail-item contact-fade-item">
+                            <span class="contact-label" data-zh="邮箱" data-en="EMAIL">EMAIL</span>
+                            <p class="contact-value">D24090600565@cityu.edu.mo</p>
+                        </div>
+                        <div class="contact-detail-item contact-fade-item">
+                            <span class="contact-label" data-zh="电话" data-en="PHONE">PHONE</span>
+                            <p class="contact-value">18011578502</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-column">
+                    <img src="IMG_7911.jpg" alt="Send Message" class="form-submit contact-fade-item" data-zh="发送消息" data-en="SEND MESSAGE">
+                </div>
+            </div>
+        </section>
+        
+        <div class="modal" id="artworkModal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div class="modal-image-wrapper">
+                    <div class="modal-main-image">
+                        <img class="modal-image" id="modalImage1" src="" alt="Artwork">
+                        <div class="modal-text-overlay">
+                            <h3 id="modalTitle"></h3>
+                            <p id="modalDescription"></p>
+                        </div>
+                    </div>
+                    <div class="modal-secondary-image">
+                        <img class="modal-image" id="modalImage2" src="" alt="Artwork" style="display: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p class="footer-motto" data-zh="即使在寂静中，也要继续航行。" data-en="Keep sailing, even in the stillness.">Keep sailing, even in the stillness.</p>
+            <p class="footer-student-info">Name: Zizheng Chan</p>
+            <p class="footer-student-info">Student ID: 24160104</p>
+            <p class="footer-copyright">&copy; 2026 Captain's Café</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin3.min.js"></script>
+    
+    <script>
+        gsap.registerPlugin(MorphSVGPlugin);
+        
+        // 检查是否是刷新或首次进入页面
+        if (performance.navigation.type === 1 || performance.navigation.type === 0) {
+            // 为导航栏添加滑入动画
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                navbar.style.animation = 'slideIn 0.5s ease-out';
+            }
+        }
+        
+        window.scrollTo(0, 0);
+        
+        let path = document.querySelector(".path"); 
+        const start = "M 0 100 V 50 Q 50 0 100 50 V 100 z"; 
+        const end = "M 0 100 V 0 Q 50 0 100 0 V 100 z"; 
+        
+        let tl = gsap.timeline(); 
+        tl.to(path, {morphSVG: start, ease: "power2.in", duration: 2}) 
+           .to(path, {morphSVG: end, ease: "power2.out", duration: 2});
+        tl.play(); 
+         
+        const modal = document.getElementById('artworkModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalClose = document.querySelector('.modal-close');
+        
+        document.querySelectorAll('.product-item').forEach(artwork => {
+            artwork.addEventListener('click', (e) => {
+                e.stopPropagation();
+                try {
+                    // 移除其他产品的 active 类
+                    document.querySelectorAll('.product-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    // 为当前点击的产品添加 active 类
+                    artwork.classList.add('active');
+                    
+                    const modalImage1 = document.getElementById('modalImage1');
+                    const modalImage2 = document.getElementById('modalImage2');
+                    
+                    const image1 = artwork.dataset.image1 || artwork.dataset.image;
+                    modalImage1.src = image1;
+                    modalImage1.style.display = 'block';
+                    
+                    const image2 = artwork.dataset.image2;
+                    if (image2) {
+                        modalImage2.src = image2;
+                        modalImage2.style.display = 'block';
+                    } else {
+                        modalImage2.style.display = 'none';
+                    }
+                    
+                    // 获取当前语言
+                    const currentLang = localStorage.getItem('captains-cafe-lang') || 'zh';
+                    const isEn = currentLang === 'en';
+                    
+                    // 设置模态框内容
+                    modalTitle.textContent = isEn ? artwork.dataset.titleEn : artwork.dataset.titleZh;
+                    modalDescription.textContent = isEn ? artwork.dataset.descEn : artwork.dataset.descZh;
+                    
+                    // 保存当前滚动位置
+                    window.modalScrollY = window.scrollY;
+                    
+                    modal.classList.add('show');
+                    document.body.classList.add('modal-open');
+                    document.body.style.overflow = 'hidden';
+                    // 隐藏主页标题
+                    const homeTitle = document.querySelector('.container h1');
+                    const homeTagline = document.querySelector('.container .tagline');
+                    if (homeTitle) homeTitle.style.display = 'none';
+                    if (homeTagline) homeTagline.style.display = 'none';
+                } catch (error) {
+                    console.error('Error getting artwork data:', error);
+                }
+            });
+        });
+         
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('show');
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = '';
+            // 恢复主页标题显示
+            const homeTitle = document.querySelector('.container h1');
+            const homeTagline = document.querySelector('.container .tagline');
+            if (homeTitle) homeTitle.style.display = '';
+            if (homeTagline) homeTagline.style.display = '';
+            // 恢复之前的滚动位置
+            if (window.modalScrollY !== undefined) {
+                window.scrollTo(0, window.modalScrollY);
+            }
+            // 移除所有产品的 active 类
+            document.querySelectorAll('.product-item').forEach(item => {
+                item.classList.remove('active');
+            });
+        });
+         
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+                document.body.classList.remove('modal-open');
+                document.body.style.overflow = '';
+                // 恢复主页标题显示
+                const homeTitle = document.querySelector('.container h1');
+                const homeTagline = document.querySelector('.container .tagline');
+                if (homeTitle) homeTitle.style.display = '';
+                if (homeTagline) homeTagline.style.display = '';
+                // 恢复之前的滚动位置
+                if (window.modalScrollY !== undefined) {
+                    window.scrollTo(0, window.modalScrollY);
+                }
+                // 移除所有产品的 active 类
+                document.querySelectorAll('.product-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+            }
+        });
+         
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+         
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(14, 16, 15, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(14, 16, 15, 0.9)';
+            }
+        });
+         
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+         
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    fadeInObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+         
+        document.querySelectorAll('.product-item').forEach(item => {
+            fadeInObserver.observe(item);
+        });
+         
+        const parallaxItems = document.querySelectorAll('.product-item');
+         
+        function updateParallax() {
+            const scrollY = window.scrollY;
+            
+            parallaxItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const itemTop = rect.top + scrollY;
+                const itemHeight = rect.height;
+                const viewportHeight = window.innerHeight;
+                const isHovered = item.matches(':hover');
+                
+                const image = item.querySelector('.product-image');
+                const info = item.querySelector('.product-info');
+                
+                if (rect.top < viewportHeight && rect.bottom > 0) {
+                    const progress = (viewportHeight - rect.top) / (viewportHeight + itemHeight);
+                    const imageOffset = -progress * 30;
+                    const infoOffset = -progress * 36;
+                    
+                    if (image) {
+                        const scale = isHovered ? 'scale(1.02)' : '';
+                        const translateY = imageOffset !== 0 ? `translateY(${imageOffset}px)` : '';
+                        image.style.transform = `${translateY} ${scale}`.trim();
+                    }
+                    if (info) {
+                        const translateX = info.style.transform.includes('translateX') ? info.style.transform.match(/translateX\([^)]+\)/)?.[0] : '';
+                        const translateY = infoOffset !== 0 ? `translateY(${infoOffset}px)` : '';
+                        const combinedTransform = `${translateX || ''} ${translateY}`.trim();
+                        if (combinedTransform) {
+                            info.style.transform = combinedTransform;
+                        }
+                    }
+                } else {
+                    if (image) {
+                        image.style.transform = isHovered ? 'scale(1.02)' : '';
+                    }
+                    if (info) {
+                        const translateX = info.style.transform.match(/translateX\([^)]+\)/)?.[0] || '';
+                        info.style.transform = translateX;
+                    }
+                }
+            });
+        }
+         
+        window.addEventListener('scroll', updateParallax);
+        updateParallax();
+         
+        const contactFadeItems = document.querySelectorAll('.contact-fade-item');
+         
+        const contactObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    const items = document.querySelectorAll('.contact-fade-item');
+                    items.forEach((item, i) => {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, i * 100);
+                    });
+                    contactObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.2 });
+         
+        const contactSection = document.querySelector('.contact-section');
+        if (contactSection) {
+            contactObserver.observe(contactSection);
+        }
+         
+        const aboutFadeItems = document.querySelectorAll('.about-fade-item');
+         
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    const items = document.querySelectorAll('.about-fade-item');
+                    items.forEach((item, i) => {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, i * 100);
+                    });
+                    aboutObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.2 });
+         
+        const aboutSection = document.querySelector('.about-section');
+        if (aboutSection) {
+            aboutObserver.observe(aboutSection);
+        }
+        
+        // Logo 区域淡入动画
+        const logoFadeItems = document.querySelectorAll('.logo-section h2, .logo-section p, .logo-section img');
+        
+        const logoObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    const items = document.querySelectorAll('.logo-section h2, .logo-section p, .logo-section img');
+                    items.forEach((item, i) => {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, i * 100);
+                    });
+                    logoObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        const logoSection = document.querySelector('.logo-section');
+        if (logoSection) {
+            logoObserver.observe(logoSection);
+        }
+
+        // 语言切换功能
+        const langToggle = document.querySelector('.lang-toggle');
+        
+        // 切换语言函数
+        function toggleLanguage(isEn) {
+            // 切换所有带 data-zh 属性的元素
+            document.querySelectorAll('[data-zh]').forEach(el => {
+                el.textContent = isEn ? el.dataset.en : el.dataset.zh;
+            });
+            
+            // 切换产品标题和描述
+            document.querySelectorAll('.product-item').forEach(item => {
+                const titleEl = item.querySelector('.product-title');
+                const descEl = item.querySelector('.product-description');
+                if (titleEl) {
+                    titleEl.textContent = isEn ? item.dataset.titleEn : item.dataset.titleZh;
+                }
+                if (descEl) {
+                    descEl.textContent = isEn ? item.dataset.descEn : item.dataset.descZh;
+                }
+            });
+            
+            // 切换模态框内容（如果打开）
+            const modal = document.getElementById('artworkModal');
+            if (modal && modal.classList.contains('show')) {
+                const modalTitle = document.getElementById('modalTitle');
+                const modalDescription = document.getElementById('modalDescription');
+                // 尝试获取当前打开的产品数据
+                const activeProduct = document.querySelector('.product-item.active');
+                if (activeProduct) {
+                    modalTitle.textContent = isEn ? activeProduct.dataset.titleEn : activeProduct.dataset.titleZh;
+                    modalDescription.textContent = isEn ? activeProduct.dataset.descEn : activeProduct.dataset.descZh;
+                }
+            }
+            
+            // 切换按钮文本
+            langToggle.textContent = isEn ? '中' : 'EN';
+            
+            // 保存到 localStorage
+            localStorage.setItem('captains-cafe-lang', isEn ? 'en' : 'zh');
+        }
+        
+        // 初始化语言
+        function initLanguage() {
+            try {
+                // 优先从 localStorage 读取
+                const savedLang = localStorage.getItem('captains-cafe-lang');
+                
+                // 如果没有保存的语言，默认设置为英文
+                let isEn = true;
+                if (savedLang) {
+                    isEn = savedLang === 'en';
+                }
+                
+                // 设置语言
+                toggleLanguage(isEn);
+            } catch (error) {
+                console.error('Error initializing language:', error);
+                // 即使出错也默认设置为英文
+                toggleLanguage(true);
+            }
+        }
+        
+        // 切换语言事件
+        if (langToggle) {
+            langToggle.addEventListener('click', () => {
+                try {
+                    // 检查当前是否为英文
+                    const currentLang = localStorage.getItem('captains-cafe-lang');
+                    const isEn = currentLang !== 'en';
+                    toggleLanguage(isEn);
+                } catch (error) {
+                    console.error('Error toggling language:', error);
+                }
+            });
+        }
+        
+        // 初始化
+        initLanguage();
+    </script>
+</body>
+</html>
